@@ -18,7 +18,15 @@ categoryCuts = {
     }
 
 regionCuts = {
-    'base' : base
+    'base' : base,
+    'closeB' : 'dRfj1Isob < 1.5',
+    'farB' : 'dRfj1Isob > 1.5',
+    'rightMass' : 'fj1MSD_corr < 105 && fj1MSD_corr > 65',
+    'n2ddt' : 'N2DDT < 0',
+    'fullcutz' : ' && '.join([
+            base,
+            'fj1MaxCSV < 0.5',
+            ])
     }
 
 # These are just for the users to loop over

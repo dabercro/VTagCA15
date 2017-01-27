@@ -1,7 +1,7 @@
 export CrombieFilesPerJob=10
 export CrombieQueue=8nh
 
-export CrombieNLocalProcs=`getconf _NPROCESSORS_ONLN`
+export CrombieNLocalProcs=6
 
 export CrombieFileBase=flat
 export CrombieEosDir=/store/user/dabercro

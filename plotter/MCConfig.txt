@@ -1,8 +1,9 @@
-WJets              WJets.root                -1                     W_+_jets           413
-ST                 SingleTop.root            -1                     Single_top         808
-Diboson            Diboson.root              -1                     Diboson            425
-Zll                ZJets.root                -1                     Z_#rightarrow_ll   867
-QCD                QCD.root                  -1                     QCD                889
+Background       WJets.root                -1                     W_+_jets           413
+.                ZJets.root                -1                     Z_#rightarrow_ll   867
+.                QCD.root                  -1                     QCD                889
+Signal           SingleTop.root            -1                     Single_top         808
+.                Diboson.root              -1                     Diboson            425
 
-Matched   /data/t3home000/dabercro/vtagCA15/tt_matched/TTbar.root   -1   Top_Matched       41
-Unmatched /data/t3home000/dabercro/vtagCA15/tt_unmatched/TTbar.root -1   Top_Unmatched     38
+.    /data/t3home000/dabercro/vtagCA15/tt_matched/TTbar.root   -1   Top_Matched       41
+.    /data/t3home000/dabercro/vtagCA15/w_matched/TTbar.root    -1   W_Matched         40
+.    /data/t3home000/dabercro/vtagCA15/unmatched/TTbar.root    -1   Unmatched         38
