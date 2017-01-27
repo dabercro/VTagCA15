@@ -62,10 +62,99 @@
 \end{frame}
 
 % Introduce the samples used. Deflect questions to Benedikt.
+\begin{frame}
+  \frametitle{Samples Used (Sort of)}
+
+  Benedikt can hopefully answer questions about the details, but the main backgrounds used are:
+
+  \begin{itemize}
+  \item \tt + jets
+  \item Single top
+  \item W/Z + jets
+  \item Diboson
+  \item QCD
+  \end{itemize}
+
+\end{frame}
+
 % Give the base selection
+\begin{frame}
+  \frametitle{Selection}
+
+  Doesn't quite match the previous V-tagging
+
+  \begin{itemize}
+  \item One fat jet with $p_T > \SI{200}{GeV}$ and $50 < m_{SD} < \SI{250}{GeV}$
+  \item One tight muon and no electrons, taus, or photons
+  \item $\Delta\phi\mathrm{(fat jet, recoil)} > 0.4$
+  \item Two isolated (ask Benedikt), loose-tagged b jets, with at least one medium
+  \item Fewer than 4 isolated narrow (AK4) jets
+  \item Passes MET filter
+  \end{itemize}
+
+\end{frame}
+
 % Show a mass plot
+\begin{frame}
+  \frametitle{Soft Drop Mass}
+
+  \begin{center}
+  \includegraphics[width=0.6\linewidth]{170127/cat_base_fj1MSD_corr.pdf}
+  \end{center}
+
+  Yes, I know it doesn't look so good, now we're going to explore why that might be.
+
+\end{frame}
+
 % Show the DR fat, bjet to explain bad mass plot
+\begin{frame}
+  \frametitle{$\Delta R\mathrm{(fat jet, b jet)}$}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \textcolor{blue}{Base selection}
+      \includegraphics[width=\linewidth]{170127/cat_base_dRfj1Isob.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \textcolor{blue}{Jets with the right mass}
+      \includegraphics[width=\linewidth]{170127/cat_base+rightMass_dRfj1Isob.pdf}
+    \end{column}
+  \end{columns}
+
+  The cone size is so large that b jets are not really falling just outside the cone
+  like they were for the AK8 case.
+  We can't do the same cuts as before.
+
+\end{frame}
+
 % Show how SD seems to cut out some of the b jets
+\begin{frame}
+  \frametitle{B jet removal}
+
+  One thing we can look into is removing PF candidates from a b-tagged jet.
+  This would also allow for us to measure more boosted jets in the AK8 case.
+
+  \textcolor{red}{The following have $65 < m_{SD} < \SI{105}{GeV}$}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \textcolor{blue}{Regular N-subjettiness}
+      \includegraphics[width=\linewidth]{170127/cat_base+rightMass_fj1Tau21.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \textcolor{blue}{With Soft Drop removal}
+      \includegraphics[width=\linewidth]{170127/cat_base+rightMass_fj1Tau21SD.pdf}
+    \end{column}
+  \end{columns}
+
+  Here, you can see at the correct Soft Drop mass, the algorithm probably removes particles from the b-jet, allowing for more conventional tagging.
+
+\end{frame}
+
 % Do scale factor measurement with systematics up and down
 
 \beginbackup
