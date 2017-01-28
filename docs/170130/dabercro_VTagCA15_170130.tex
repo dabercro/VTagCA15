@@ -28,7 +28,9 @@
 \setbeamertemplate{footline}[text line]{\parbox{1.083\linewidth}{\footnotesize \hfill \insertshortauthor \hfill \insertpagenumber /\inserttotalframenumber}}
 \setbeamertemplate{headline}[text line]{\parbox{1.083\linewidth}{\footnotesize \hspace{-0.083\linewidth} \textcolor{blue}{\sffamily \insertsection \hfill \insertsubsection}}}
 
-\logo{\includegraphics[height=0.5cm]{/home/dabercro/MIT-logo.pdf}}
+\IfFileExists{/Users/dabercro/GradSchool/Presentations/MIT-logo.pdf}
+             {\logo{\includegraphics[height=0.5cm]{/Users/dabercro/GradSchool/Presentations/MIT-logo.pdf}}}
+             {\logo{\includegraphics[height=0.5cm]{/home/dabercro/MIT-logo.pdf}}}
 
 \usepackage{changepage}
 
@@ -41,7 +43,7 @@
   \addtocounter{framenumber}{\value{framenumbervorappendix}}
 }
 
-\newcommand{\tt}{\ensuremath{t\bar{t}}}
+\newcommand{\ttbar}{$t\bar{t}$ }
 
 \graphicspath{{figs/}}
 
@@ -55,7 +57,7 @@
   \frametitle{Introduction}
 
   In a gross attempt to make my life simple, I explored a cut and count V-tag scale factor measurement
-  in semileptonic \tt using CA15 jets.
+  in semileptonic \ttbar using CA15 jets.
   The peaks and backgrounds do not look as nice as the previous AK8 measurements we have seen,
   but the results are still promising.
 
@@ -68,7 +70,7 @@
   Benedikt can hopefully answer questions about the details, but the main backgrounds used are:
 
   \begin{itemize}
-  \item \tt + jets
+  \item \ttbar + jets
   \item Single top
   \item W/Z + jets
   \item Diboson
@@ -133,8 +135,8 @@
 \begin{frame}
   \frametitle{B jet removal}
 
-  One thing we can look into is removing PF candidates from a b-tagged jet.
-  This would also allow for us to measure more boosted jets in the AK8 case.
+  We might consider removing PF candidates from a b-tagged jet.
+  This also allows for measuring boosted jets in the AK8 case.
 
   \textcolor{red}{The following have $65 < m_{SD} < \SI{105}{GeV}$}
 
@@ -151,11 +153,135 @@
     \end{column}
   \end{columns}
 
-  Here, you can see at the correct Soft Drop mass, the algorithm probably removes particles from the b-jet, allowing for more conventional tagging.
+  At the correct Soft Drop mass, the algorithm removes particles from the b-jet, shifting substructure variables as well.
 
 \end{frame}
 
 % Do scale factor measurement with systematics up and down
+\begin{frame}
+  \frametitle{Scale Factor}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \textcolor{blue}{Mass} \\
+      \includegraphics[width=0.7\linewidth]{170127_background/cat_base_fj1MSD_corr.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \textcolor{blue}{Substructure (DDT)} \\
+      \includegraphics[width=0.7\linewidth]{170127_background/cat_base_N2DDT.pdf}
+    \end{column}
+  \end{columns}
+
+  \textcolor{red}{V-tagging cuts: $65 < m_{SD} < \SI{105}{GeV}$ and $N2DDT < 0.0$}
+
+  \begin{adjustwidth}{-2.5em}{-2.5em}
+    \centering
+
+    {\scriptsize
+      \begin{tabular}{| c | c | c | c | c |}
+        \hline
+        & No Cut & SD Mass Cut & N2DDT & Full Cut \\
+        \hline
+        \makecell{Background \\ Subtracted \\ Data} & 3449.58 $\pm$ 67.74 & 1145.44 $\pm$ 38.15 & 990.28 $\pm$ 37.70 & 530.19 $\pm$ 24.94 \\
+        \makecell{Signal-\\ matched MC} & 3293.68 $\pm$ 31.08 & 1070.16 $\pm$ 20.21 & 937.79 $\pm$ 18.55 & 495.15 $\pm$ 15.11 \\
+        \hline
+        \makecell{Normalized \\ Ratio} & 1.00 $\pm$ 0.02 & 1.02 $\pm$ 0.04 & 1.01 $\pm$ 0.04 & \fcolorbox{red}{yellow}{1.02 $\pm$ 0.06} \\
+        \hline
+      \end{tabular}
+    }
+  \end{adjustwidth}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Scale Factor (Background Up)}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \textcolor{blue}{Regular Background} \\
+      \includegraphics[width=0.7\linewidth]{170127_background/cat_base_fj1MSD_corr.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \textcolor{blue}{Backgrounds Scaled Up} \\
+      \includegraphics[width=0.7\linewidth]{170127_up/cat_base_fj1MSD_corr.pdf}
+    \end{column}
+  \end{columns}
+
+  \textcolor{red}{V-tagging cuts: $65 < m_{SD} < \SI{105}{GeV}$ and $N2DDT < 0.0$}
+
+  \begin{adjustwidth}{-2.5em}{-2.5em}
+    \centering
+
+    {\scriptsize
+      \begin{tabular}{| c | c | c | c | c |}
+        \hline
+        & No Cut & SD Mass Cut & N2DDT & Full Cut \\
+        \hline
+        \makecell{Background \\ Subtracted \\ Data} & 3175.16 $\pm$ 84.75 & 1066.87 $\pm$ 46.38 & 902.57 $\pm$ 49.51 & 504.38 $\pm$ 28.63 \\
+        \makecell{Signal-\\ matched MC} & 3293.68 $\pm$ 31.08 & 1070.16 $\pm$ 20.21 & 937.79 $\pm$ 18.55 & 495.15 $\pm$ 15.11 \\
+        \hline
+        \makecell{Normalized \\ Ratio} & 1.00 $\pm$ 0.03 & 1.03 $\pm$ 0.05 & 1.00 $\pm$ 0.06 & \fcolorbox{red}{yellow}{1.06 $\pm$ 0.07} \\
+        \hline
+      \end{tabular}
+    }
+  \end{adjustwidth}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Scale Factor (Background Down)}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \textcolor{blue}{Regular Background} \\
+      \includegraphics[width=0.7\linewidth]{170127_background/cat_base_fj1MSD_corr.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \textcolor{blue}{Backgrounds Scaled Down} \\
+      \includegraphics[width=0.7\linewidth]{170127_down/cat_base_fj1MSD_corr.pdf}
+    \end{column}
+  \end{columns}
+
+  \textcolor{red}{V-tagging cuts: $65 < m_{SD} < \SI{105}{GeV}$ and $N2DDT < 0.0$}
+
+  \begin{adjustwidth}{-2.5em}{-2.5em}
+    \centering
+
+    {\scriptsize
+      \begin{tabular}{| c | c | c | c | c |}
+        \hline
+        & No Cut & SD Mass Cut & N2DDT & Full Cut \\
+        \hline
+        \makecell{Background \\ Subtracted \\ Data} & 3586.79 $\pm$ 62.77 & 1184.72 $\pm$ 35.80 & 1034.14 $\pm$ 34.11 & 543.09 $\pm$ 23.93 \\
+        \makecell{Signal-\\ matched MC} & 3293.68 $\pm$ 31.08 & 1070.16 $\pm$ 20.21 & 937.79 $\pm$ 18.55 & 495.15 $\pm$ 15.11 \\
+        \hline
+        \makecell{Normalized \\ Ratio} & 1.00 $\pm$ 0.02 & 1.02 $\pm$ 0.04 & 1.01 $\pm$ 0.04 & \fcolorbox{red}{yellow}{1.01 $\pm$ 0.05} \\
+        \hline
+      \end{tabular}
+    }
+  \end{adjustwidth}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusions}
+
+  \begin{itemize}
+  \item No obvious way to make the selection cleaner to model the actual signal events, but useful for signal-like backgrounds
+  \item Soft-drop b-jet removal suggests that removing b-jet PF candidates in future V-tagging studies may produce correct substructure in boosted events
+  \item With current limited systematics, we get:
+    \begin{center}
+      \boxed{$1.02 \pm 0.06 \mathrm{(stat.)} \pm 0.04 \mathrm{(sys.)}$}
+    \end{center}
+  \end{itemize}
+
+\end{frame}
 
 \beginbackup
 
