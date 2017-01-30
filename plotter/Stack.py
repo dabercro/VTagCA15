@@ -10,6 +10,7 @@ SetupFromEnv()
 
 plotter.AddDataFile('MET.root')
 plotter.SetMinLegendFrac(0.03)
+plotter.SetForceTop('W Matched')
 
 plotter.SetRatioMinMax(0.0, 2.0)
 
@@ -34,6 +35,8 @@ def SetupArgs_RightLegend():
         [{'var_name': 'looseB'}, 'Sum$(jetPt>30 && jetIso && jetCSV>0.605)', 5, 0, 5, 'Number of Loose B'],
         [{'var_name': 'medB'}, 'Sum$(jetPt>30 && jetIso && jetCSV>0.89)', 5, 0, 5, 'Number of Medium B'],
         ['fj1MSD_corr', 25, 0.0, 250.0, 'm_{SD} [GeV]'],
+        ['fj1GenSize', 30, 0.0, 3.0, 'Top Gen Size'],
+        ['fj1GenWSize', 30, 0.0, 3.0, 'W Gen Size'],
         ]
 
 def SetupArgs_LeftLegend():
