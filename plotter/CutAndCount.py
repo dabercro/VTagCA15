@@ -29,6 +29,12 @@ def GetTables():
     histAnalysis.SetBaseCut(cuts.cut('cat', 'fullcutz'))
     histAnalysis.DoScaleFactors('fj1IsMatched', 1, 0, 2)
 
+    print '\nWith far-btag\n'
+
+    histAnalysis.SetBaseCut(cuts.cut('cat', 'base+farB'))
+    histAnalysis.DoScaleFactors('fj1IsMatched', 1, 0, 2)
+
+
 if __name__ == "__main__":
     GetTables()
 

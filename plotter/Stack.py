@@ -3,6 +3,7 @@
 from CrombieTools.PlotTools.PlotStack import *
 from CrombieTools.LoadConfig import cuts
 import os
+import sys
 
 overwrite = int(os.environ.get('OW', 1))
 
@@ -37,6 +38,7 @@ def SetupArgs_RightLegend():
         ['fj1MSD_corr', 25, 0.0, 250.0, 'm_{SD} [GeV]'],
         ['fj1GenSize', 30, 0.0, 3.0, 'Top Gen Size'],
         ['fj1GenWSize', 30, 0.0, 3.0, 'W Gen Size'],
+        ['dphiUW', 40, 0.0, 4.0, '#Delta#phi(W, recoil)'],
         ]
 
 def SetupArgs_LeftLegend():
@@ -57,8 +59,11 @@ def make_new(tail):
 
 def main():
     regions = ['base', 'fullcutz']
-    for add in ['closeB', 'farB', 'rightMass', 'closeB+rightMass', 'farB+rightMass']:
-        regions.append('base+' + add)
+
+    if 'full' in sys.argv:
+        for add in ['closeB', 'farB', 'rightMass', 'closeB+rightMass', 'farB+rightMass']:
+            regions.append('base+' + add)
+            regions.append('fullcutz+' + add)
 
     plotter.SetLegendLocation(plotter.kUpper, plotter.kRight, 0.3, 0.4)
     MakePlots(cuts.categories, regions, SetupArgs_RightLegend(), overwrite)
@@ -68,15 +73,25 @@ def main():
 if __name__ == '__main__':
     main()
 
-    plotter.NameTreesAfterLimits()
-    plotter.SetLegendColor('Signal', 867)
-    plotter.SetLegendColor('Background', 393)
+    if 'back' in sys.argv:
+        plotter.SetForceTop('Signal')
+        plotter.NameTreesAfterLimits()
+        plotter.SetLegendColor('Signal', 867)
+        plotter.SetLegendColor('Background', 393)
 
-    make_new('_background')
-    main()
-    plotter.ScaleBackgrounds('Background', 1.0)
-    make_new('_up')
-    main()
-    plotter.ScaleBackgrounds('Background', -0.75)
-    make_new('_down')
-    main()
+        make_new('_background')
+        main()
+        plotter.ScaleBackgrounds('Background', 1.0)
+        make_new('_up')
+        main()
+        plotter.ScaleBackgrounds('Background', -0.75)
+        make_new('_down')
+        main()
+
+        plotter.ResetConfig(plotter.kBackground)
+        plotter.ReadMCConfig('MCConfig_MoreBack.txt', plotter.kBackground)
+        plotter.NameTreesAfterLimits()
+        plotter.SetLegendColor('Signal', 867)
+        plotter.SetLegendColor('Background', 393)
+        make_new('_more')
+        main()

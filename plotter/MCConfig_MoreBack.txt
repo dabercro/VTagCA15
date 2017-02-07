@@ -2,7 +2,7 @@ Background       WJets.root                -1                     W_+_jets      
 .                ZJets.root                -1                     Z_#rightarrow_ll   867
 .                QCD.root                  -1                     QCD                889
 
-Signal                Diboson.root              -1                     Diboson            425
+.                Diboson.root              -1                     Diboson            425
 
 .    /data/t3home000/dabercro/vtagCA15/tt_matched/TTbar.root   -1   Top_Matched       41
 .    /data/t3home000/dabercro/vtagCA15/unmatched/TTbar.root    -1   Unmatched         38
