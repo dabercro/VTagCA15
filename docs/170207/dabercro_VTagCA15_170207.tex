@@ -82,11 +82,10 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Selection}
+  \frametitle{Base Selection}
 
   \begin{itemize}
   \item Exactly one fat jet with $p_T > \SI{200}{GeV}$ and $50 < m_{SD} < \SI{250}{GeV}$
-  \item No subjets in the fat jet with $\mathrm{csv} > 0.5$
   \item $\Delta\phi\mathrm{(fat jet, recoil)} > 0.4$
   \item Two loose-tagged b jets, with at least one medium, not inside the fat jet
   \item Fewer than 4 isolated narrow (AK4) jets
@@ -97,43 +96,307 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Soft Drop Mass}
+  \frametitle{Mass at Base Selection}
 
-  The sub-jet csv cut eliminates much of the merged top contribution.
-  However, we still would only be able to apply the scale factor to a signal that looks like this.
+  In the base selection, we get a large amount of merged tops resulting in a top mass peak.
+  We need to add some purity cut to this.
+  We will consider:
+  \begin{itemize}
+  \item Sub-jet b-tag veto
+  \item $\Delta R$ cut between fat jet and closest b-tagged jet
+  \end{itemize}
+
+  \centering
+  \includegraphics[width=0.6\linewidth]{170207_VTagCA15/cat_base_fj1MSD_corr.pdf}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Sub-jet b-tag Veto}
+
+  Require that the maximum sub-jet csv$ < 0.5$.
+
+  \vspace{6pt}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_fullcutz_fj1MaxCSV.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_fullcutz_fj1MSD_corr.pdf}
+    \end{column}
+  \end{columns}
+
+  \vspace{6pt}
+
+  Purity of W-matched MC: $5697.0/\SI{20703.4}{events} = 27.5\%$
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{$\Delta R$ Between Fat Jet and b-tagged Jet}
+
+  Require that $\DeltaR > 1.5$.
+
+  \vspace{6pt}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_base+farB_dRfj1Isob.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_base+farB_fj1MSD_corr.pdf}
+    \end{column}
+  \end{columns}
+
+  \vspace{6pt}
+
+  Purity of W-matched MC: $5516.1/\SI{20106.6}{events} = 27.4\%$
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cuts are Similar}
+
+  Below shows how each distribution is affected by the cut on the other variable.
+
+  \vspace{6pt}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \textcolor{blue}{$\Delta R$ with a sub-b veto} \\
+      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_fullcutz+farB_dRfj1Isob.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \textcolor{blue}{Max sub-csv with a $\Delta R$ cut} \\
+      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_fullcutz+farB_fj1MaxCSV.pdf}
+    \end{column}
+  \end{columns}
+
+  \vspace{6pt}
+
+  We will use the subjet b-tag veto for the measurement and the $\Delta R$ as a systematic,
+  along with the base selection.
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Tagging Variables Before Tagging}
+
+  The Mass and DDT distributions before tagging are shown below
 
   \vspace{12pt}
 
   \begin{columns}
     \begin{column}{0.5\linewidth}
-      \color{blue}{Without sub-jet veto} \\
-      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_base_fj1MSD_corr.pdf}
+      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_fullcutz_fj1MSD_corr.pdf}
     \end{column}
     \begin{column}{0.5\linewidth}
-      \color{blue}{Max sub-csv$ > 0.5$} \\
-      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_fullcutz_fj1MSD_corr.pdf}
+      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_fullcutz_N2DDT.pdf}
     \end{column}
   \end{columns}
 
 \end{frame}
 
 \begin{frame}
-  \frametitle{No $\Delta R(j, b)$, like before}
+  \frametitle{Tagging Variables After Tagging}
 
-  There's not really a window that gives a clean selection
+  The Mass and DDT variables shape each other when using the tagging cuts
 
   \vspace{12pt}
 
   \begin{columns}
     \begin{column}{0.5\linewidth}
-      \color{blue}{All Masses} \\ 
-     \includegraphics[width=0.6\linewidth]{170207_VTagCA15/cat_base_fj1MSD_corr.pdf}
+      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_fullcutz+rightMass+n2ddt_fj1MSD_corr.pdf}
     \end{column}
     \begin{column}{0.5\linewidth}
-      \color{blue}{$\SI{65}{GeV} < m_{SD} < \SI{105}{GeV}$} \\
-      \includegraphics[width=0.6\linewidth]{170207_VTagCA15/cat_fullcutz_fj1MSD_corr.pdf}
+      \includegraphics[width=\linewidth]{170207_VTagCA15/cat_fullcutz+rightMass+n2ddt_N2DDT.pdf}
     \end{column}
   \end{columns}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Scale Factors}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \includegraphics[width=0.8\linewidth]{170207_VTagCA15_background/cat_fullcutz_fj1MSD_corr.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \includegraphics[width=0.8\linewidth]{170207_VTagCA15_background/cat_fullcutz_N2DDT.pdf}
+    \end{column}
+  \end{columns}
+
+  \textcolor{red}{V-tagging cuts: $65 < m_{SD} < \SI{105}{GeV}$ and $N2DDT < 0.0$}
+
+  \begin{adjustwidth}{-2.5em}{-2.5em}
+    \centering
+
+    {\scriptsize
+      \begin{tabular}{| c | c | c | c | c |}
+        \hline
+        & No Cut & SD Mass Cut & N2DDT & Full Cut \\
+        \hline
+        \makecell{Background \\ Subtracted \\ Data} & 1683.17 $\pm$ 48.84 & 671.28 $\pm$ 30.50 & 548.56 $\pm$ 28.46 & 332.68 $\pm$ 20.12 \\
+        \makecell{Signal-\\ matched MC} & 1666.66 $\pm$ 22.84 & 655.41 $\pm$ 16.55 & 517.59 $\pm$ 14.82 & 307.63 $\pm$ 12.79 \\
+        \hline
+        \makecell{Normalized \\ Ratio} & 1.00 $\pm$ 0.03 & 1.01 $\pm$ 0.05 & 1.05 $\pm$ 0.06 & \fcolorbox{red}{yellow}{1.07 $\pm$ 0.08} \\
+        \hline
+      \end{tabular}
+    }
+  \end{adjustwidth}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Background Scaling}
+
+  Scaling the background up by a factor of two made a larger difference than scaling down
+  by a factor of two.
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \includegraphics[width=0.8\linewidth]{170207_VTagCA15_background/cat_fullcutz_fj1MSD_corr.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \includegraphics[width=0.8\linewidth]{170207_VTagCA15_up/cat_fullcutz_fj1MSD_corr.pdf}
+    \end{column}
+  \end{columns}
+
+  \textcolor{red}{V-tagging cuts: $65 < m_{SD} < \SI{105}{GeV}$ and $N2DDT < 0.0$}
+
+  \begin{adjustwidth}{-2.5em}{-2.5em}
+    \centering
+
+    {\scriptsize
+      \begin{tabular}{| c | c | c | c | c |}
+        \hline
+        & No Cut & SD Mass Cut & N2DDT & Full Cut \\
+        \hline
+        \makecell{Background \\ Subtracted \\ Data} & 1511.34 $\pm$ 63.04 & 608.55 $\pm$ 38.97 & 493.12 $\pm$ 37.78 & 312.36 $\pm$ 23.66 \\
+        \makecell{Signal-\\ matched MC} & 1666.66 $\pm$ 22.84 & 655.41 $\pm$ 16.55 & 517.59 $\pm$ 14.82 & 307.63 $\pm$ 12.79 \\
+        \hline
+        \makecell{Normalized \\ Ratio} & 1.00 $\pm$ 0.04 & 1.02 $\pm$ 0.07 & 1.05 $\pm$ 0.09 & \fcolorbox{red}{yellow}{1.12 $\pm$ 0.10} \\
+        \hline
+      \end{tabular}
+    }
+  \end{adjustwidth}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Background Selection}
+
+  By saying that only W-matched and Single top are signal-like, we get this alternate scale factor
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \includegraphics[width=0.8\linewidth]{170207_VTagCA15_background/cat_fullcutz_fj1MSD_corr.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \centering
+      \includegraphics[width=0.8\linewidth]{170207_VTagCA15_more/cat_fullcutz_fj1MSD_corr.pdf}
+    \end{column}
+  \end{columns}
+
+  \textcolor{red}{V-tagging cuts: $65 < m_{SD} < \SI{105}{GeV}$ and $N2DDT < 0.0$}
+
+  \begin{adjustwidth}{-2.5em}{-2.5em}
+    \centering
+
+    {\scriptsize
+      \begin{tabular}{| c | c | c | c | c |}
+        \hline
+        & No Cut & SD Mass Cut & N2DDT & Full Cut \\
+        \hline
+        \makecell{Background \\ Subtracted \\ Data} & 744.68 $\pm$ 50.95 & 431.91 $\pm$ 31.81 & 314.05 $\pm$ 29.84 & 256.95 $\pm$ 21.38 \\
+        \makecell{Signal-\\ matched MC} & 737.37 $\pm$ 17.74 & 418.39 $\pm$ 13.93 & 285.38 $\pm$ 11.86 & 232.65 $\pm$ 10.60 \\
+        \hline
+        \makecell{Normalized \\ Ratio} & 1.00 $\pm$ 0.07 & 1.02 $\pm$ 0.08 & 1.09 $\pm$ 0.11 & \fcolorbox{red}{yellow}{1.09 $\pm$ 0.10} \\
+        \hline
+      \end{tabular}
+    }
+  \end{adjustwidth}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Base Selection and Top $p_T$ Reweighting}
+
+  Using the base selection \\ (no b-tag veto, an aggressive systematic):
+
+  \begin{adjustwidth}{-2.5em}{-2.5em}
+    \centering
+
+    {\scriptsize
+      \begin{tabular}{| c | c | c | c | c |}
+        \hline
+        & No Cut & SD Mass Cut & N2DDT & Full Cut \\
+        \hline
+        \makecell{Background \\ Subtracted \\ Data} & 3449.58 $\pm$ 67.74 & 1145.44 $\pm$ 38.15 & 990.28 $\pm$ 37.70 & 530.19 $\pm$ 24.94 \\
+        \makecell{Signal-\\ matched MC} & 3293.68 $\pm$ 31.08 & 1070.16 $\pm$ 20.21 & 937.79 $\pm$ 18.55 & 495.15 $\pm$ 15.11 \\
+        \hline
+        \makecell{Normalized \\ Ratio} & 1.00 $\pm$ 0.02 & 1.02 $\pm$ 0.04 & 1.01 $\pm$ 0.04 & \fcolorbox{red}{yellow}{1.02 $\pm$ 0.06} \\
+        \hline
+      \end{tabular}
+    }
+  \end{adjustwidth}
+
+  Turning off top $p_T$ reweighting:
+
+  \begin{adjustwidth}{-2.5em}{-2.5em}
+    \centering
+
+    {\scriptsize
+      \begin{tabular}{| c | c | c | c | c |}
+        \hline
+        & No Cut & SD Mass Cut & N2DDT & Full Cut \\
+        \hline
+        \makecell{Background \\ Subtracted \\ Data} & 1703.56 $\pm$ 47.61 & 678.72 $\pm$ 29.77 & 555.14 $\pm$ 27.64 & 335.09 $\pm$ 19.83 \\
+        \makecell{Signal-\\ matched MC} & 1913.87 $\pm$ 24.83 & 753.04 $\pm$ 17.63 & 592.50 $\pm$ 15.75 & 354.99 $\pm$ 13.47 \\
+        \hline
+        \makecell{Normalized \\ Ratio} & 1.00 $\pm$ 0.03 & 1.01 $\pm$ 0.05 & 1.05 $\pm$ 0.06 & \fcolorbox{red}{yellow}{1.06 $\pm$ 0.07} \\
+        \hline
+      \end{tabular}
+    }
+  \end{adjustwidth}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Systematic Uncertainties}
+  We assume systematic uncertainties are symmetric for now
+  \begin{center}
+  \begin{tabular}{l|c}
+    Source & Uncertainty \\
+    \hline
+    Background Subtraction & 5\% \\
+    Which background is subtracted & 2\% \\
+    B-veto selection & 5\% (rather aggressive) \\
+    Top $p_T$ reweighting & 1\% \\
+  \end{tabular}
+  \end{center}
+  Adding in Quadrature: \boxed{$\pm 7.4\%$}
+  \vspace{12pt}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusions}
+
+  \begin{itemize}
+  \item No obvious way to make the selection cleaner to model the actual signal events,
+    but useful for signal-like backgrounds with same distributions
+  \item With current limited systematics, we get:
+    \begin{center}
+      \boxed{$1.07 \pm 0.08 \mathrm{(stat.)} \pm 0.07 \mathrm{(sys.)}$}
+    \end{center}
+  \end{itemize}
 
 \end{frame}
 
