@@ -46,3 +46,12 @@ if __name__ == "__main__":
     GetTables()
 
     histAnalysis.ChangeBackground(0.0)
+    print '\nTop pt reweighting\n'
+    histAnalysis.SetMCWeight(cuts.defaultMCWeight + '/sf_tt8TeV')
+    GetTables()
+
+    print '\nWhich Backgrounds\n'
+    histAnalysis.SetMCWeight(cuts.defaultMCWeight)
+    histAnalysis.ResetConfig(histAnalysis.kBackground)
+    histAnalysis.ReadMCConfig('MCConfig_MoreBack.txt', histAnalysis.kBackground)
+    GetTables()

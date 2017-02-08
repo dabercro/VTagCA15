@@ -9,3 +9,10 @@ export CrombieOutPlotDir=/home/dabercro/public_html/plots/`date +%y%m%d`_VTagCA1
 export CrombieOutLimitTreeDir=limits/`date +%y%m%d`
 
 export CrombieCutsFile=cuts.py
+
+if [ "$DEBUG" != "" ]
+then
+
+    export CrombieNLocalProcs=1
+
+fi

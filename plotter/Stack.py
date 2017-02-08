@@ -61,9 +61,14 @@ def main():
     regions = ['base', 'fullcutz']
 
     if 'full' in sys.argv:
-        for add in ['closeB', 'farB', 'rightMass', 'closeB+rightMass', 'farB+rightMass']:
+        for add in ['closeB', 'rightMass', 'closeB+rightMass', 'farB+rightMass']:
             regions.append('base+' + add)
             regions.append('fullcutz+' + add)
+
+    regions.append('base+farB')
+    regions.append('fullcutz+farB')
+    regions.append('base+farB+rightMass+n2ddt')
+    regions.append('fullcutz+rightMass+n2ddt')
 
     plotter.SetLegendLocation(plotter.kUpper, plotter.kRight, 0.3, 0.4)
     MakePlots(cuts.categories, regions, SetupArgs_RightLegend(), overwrite)
